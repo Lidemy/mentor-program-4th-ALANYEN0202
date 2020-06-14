@@ -16,7 +16,7 @@
 ## 請列舉出 3 個「課程沒有提到」的 command line 指令並且說明功用
 
 1. clear : 指令會移除在目前階段作業期間所設的所有參數
-2. alias : 指令會建立常用指令的別名範例 : alias assign=set
+2. alias : 指令會建立常用指令的別名 範例 : alias assign = set
 3. help : help 指令會顯示關於 CLI 指令與其參數的資訊
 
 來源出處 [CLI 指令](https://docs.oracle.com/cd/E19062-01/sun.mgmt.ctr36/819-4833/cli-61/index.html)
