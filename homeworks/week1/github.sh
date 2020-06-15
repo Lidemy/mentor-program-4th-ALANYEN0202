@@ -4,7 +4,10 @@
 # History:
 # 2020/06/14
 
-curl echo https://api.github.com/users/$1 | grep -E '"name"|bio|location|blog' | cut -d ":" -f 1 --complement | sed 's/"//g' | sed  's/.$//'  
+curl --silent  https://api.github.com/users/$1 | grep  '"name"' | cut -d ":" -f 1 --complement | sed 's/"//g' | sed  's/.$//' 
+curl --silent  https://api.github.com/users/$1 | grep  '"bio"' | cut -d ":" -f 1 --complement | sed 's/"//g' | sed  's/.$//' 
+curl --silent  https://api.github.com/users/$1 | grep  '"location"' | cut -d ":" -f 1 --complement | sed 's/"//g' | sed  's/.$//' 
+curl --silent  https://api.github.com/users/$1 | grep  '"blog"' | cut -d ":" -f 1 --complement | sed 's/"//g' | sed  's/.$//' 
 
 # 先使用 curl 抓取網頁資料，這邊要注意的是使用 $1 讓使用扯可以輸入 ID 來搜尋該網頁
 # 使用 grep 抓取特定關鍵字，這邊要注意的是使用 -E "字串1|字串2" 來一次搜尋多個字串
