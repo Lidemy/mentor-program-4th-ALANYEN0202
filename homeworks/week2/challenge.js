@@ -13,5 +13,7 @@ function search(arr,t) {
     }
     return -1
   }
+console.log(search([1, 3, 10, 14, 39], 39))
+console.log(search([1, 3, 10, 14, 39], 299))
+console.log(search([1, 3, 10, 14, 39], 1)) 
 console.log(search([1, 3, 10, 14, 39], 14))
-console.log(search([1, 3, 10, 14, 39], 299)) 
