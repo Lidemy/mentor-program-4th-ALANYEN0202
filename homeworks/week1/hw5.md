@@ -7,7 +7,7 @@
 3. 前端 : 前端顯示資料給顧客
 
 
-## 假設我今天去 Google 首頁搜尋框打上：JavaScri[t 並且按下 Enter，請說出從這一刻開始到我看到搜尋結果為止發生在背後的事情。
+## 假設我今天去 Google 首頁搜尋框打上：JavaScript 並且按下 Enter，請說出從這一刻開始到我看到搜尋結果為止發生在背後的事情。
 
 1. 前端網頁把關鍵字 JavaScript 傳到 google Server
 2. 後端資料庫查詢有關 JavaScript 的資料並回傳給前端
