@@ -1,3 +1,14 @@
+const readline = require('readline');
+
+const lines = [];
+const rl = readline.createInterface({
+  input: process.stdin,
+});
+
+rl.on('line', (line) => {
+  lines.push(line);
+});
+
 function digits(n) {
   let dig = 0;
   let rbn = n;
@@ -18,11 +29,14 @@ function Narcissistic(n) {
   }
   return sum === n;
 }
-function solve(n, m) {
+function solve(input) {
+  const [n, m] = input[0].split(' ').map(Number);
   for (let i = n; i <= m; i += 1) {
     if (Narcissistic(i)) {
       console.log(i);
     }
   }
 }
-solve(5, 200);
+rl.on('close', () => {
+  solve(lines);
+});

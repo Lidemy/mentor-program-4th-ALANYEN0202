@@ -1,13 +1,27 @@
-function repeat(str, n) {
-  let result = '';
-  for (let i = 1; i <= n; i += 1) {
-    result += str;
+const readline = require('readline');
+
+const lines = [];
+const rl = readline.createInterface({
+  input: process.stdin,
+});
+
+rl.on('line', (line) => {
+  lines.push(line);
+});
+
+function repeat(n) {
+  let str = '';
+  for (let i = 0; i < n; i += 1) {
+    str += '*';
   }
-  return result;
+  return str;
 }
-function star(n) {
+function solve(input) {
+  const n = Number(input[0]);
   for (let i = 1; i <= n; i += 1) {
-    console.log(repeat('*', i));
+    console.log(repeat(i));
   }
 }
-star(5);
+rl.on('close', () => {
+  solve(lines);
+});
