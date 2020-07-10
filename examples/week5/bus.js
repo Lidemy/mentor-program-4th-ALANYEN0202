@@ -3,12 +3,11 @@ var request = require('request')
 const url = 'https://pda.5284.gov.taipei/MQS/businfo2.jsp?routename='
 
 function getBusData(number, cb) {
-  request(url + number, (err, response) => {
+  request(url + number, (err, response, body) => {
     if (err){
       cb(err)
       return
     }
-
     cb(null, response.body)
   })
 }
