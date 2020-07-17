@@ -34,20 +34,20 @@
 
   [資料來源 : 關於HTML框架(frameset)的一些基本用法](https://www.itread01.com/content/1543812006.html)
 ## 請問什麼是盒模型（box modal）
-  就是在 CSS 裡 html 最基本的組成模式，就是每個 html 標籤都是一個盒子，可以在盒子裡面填整大小，框線以及盒子與盒子間的排序等等。
+  就是在 CSS 裡 html 最基本的組成模式，就是每個 html 標籤都是一個盒子，可以在盒子裡面填整大小，框線以及盒子與盒子間的排序等等，要注意的是和模型的計算跟我們一般認知不同，此時我們會需要一個重要的屬性 `box-sizing` 預設是 `content-box`也就是加了 margin、pading會影響到實際盒子的寬高，如果改為`border-box`的話就不管如何都不影響當初設定的盒模型，系統會自動幫妳算好，很方便~
 
   參考資料 : [前端基礎：CSS 盒模型（box model）](https://medium.com/@hugh_Program_learning_diary_Js/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A4%8E-css-%E7%9B%92%E6%A8%A1%E5%9E%8B-box-model-1b977df8d3d0) 
 
 ## 請問 display: inline, block 跟 inline-block 的差別是什麼？
 
  * inline : <br>
- 簡單說就是所有元素都在同一行，不會換行，所以不能調整高度。```<a> 、 <span> 、 <b> 、 <i> 、 <img> 、 <iframe> ``` 這些標籤預設都是 inline
+ 簡單說就是所有元素都在同一行，不會換行，所以不能調整高度，**因此只能調整 margin 跟 pading 的 left、right**。```<a> 、 <span> 、 <b> 、 <i> 、 <img> 、 <iframe> ``` 這些標籤預設都是 inline
 
  * block : <br>
- 就是所有元素都是一個區塊一個區塊的，所以可以調整寬高，但要注意的是 block 的排序方式為上下，意思是每一個 block 元素都會換行。```<div> 、 <p> 、 <h1 ~ 6>``` 這些標籤預設為 block。
+ 就是所有元素都是一個區塊一個區塊的，所以可以調整寬高**因此 margin 跟 pading 還有 height、width 都可以調整**，但要注意的是 block 的排序方式為上下，意思是每一個 block 元素都會換行。```<div> 、 <p> 、 <h1 ~ 6>``` 這些標籤預設為 block。
 
  * inline-block : <br>
- 綜合兩種屬性的優點的顯示方式，也就是每個元素為一個區塊，但排序方式又都在同一行，外面是 inline 裡面是 block。
+ 綜合兩種屬性的優點的顯示方式，也就是每個元素為一個區塊，但排序方式又都在同一行，外面是 inline 裡面是 block。**因此跟 block 一樣都可以調整所有方向的 margin 跟 pading。**
 
 參考資料 : [CSS 屬性 display 的值 inline block inline-block none](https://blog.xuite.net/vexed/tech/29221717-CSS+%E5%B1%AC%E6%80%A7+display+%E7%9A%84%E5%80%BC+inline+block+inline-block+none)
 
