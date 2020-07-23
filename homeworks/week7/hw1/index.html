@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>好拖延</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">.
+  <link rel="stylesheet" href="./hw1.css">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+</head>
+
+<body>
+  <div class="all">
+    <div class="wrapper">
+      <h1 class="header__title">新拖延運動報名表單</h1>
+      <div class="header__info">活動日期：2020/12/10 ~ 2020/12/11</div>
+      <div class="header__info">活動地點：台北市大安區新生南路二段1號</div>
+      <div class="header__note">*必填</div>
+    </div>
+    <form class="form__data">
+      <div class="wrapper">
+        <h2 class="nick">暱稱</h2>
+        <div class="check__nick required hide-error">
+          <input type="text" name="nick" placeholder="您的回答"/>
+          <div class="error">請輸入暱稱</div>
+        </div>
+        <h2 class="email">電子郵件</h2>
+        <div class="check__email required hide-error">
+          <input type="text" name="email" placeholder="您的電子郵件"/>
+          <div class="error">請輸入電子信箱</div>
+        </div> 
+        <h2 class="phone">手機號碼</h2>
+        <div class="check__phone required hide-error">
+          <input type="text" name="phone" placeholder="您的手機號碼"/>
+          <div class="error">請輸入手機號碼</div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <h2 class="type">
+          報名類型
+        </h2>
+        <div class ="check__box required hide-error">
+          <label>
+          <input type="radio" name="option" value="1" />
+          躺在床上用想像力實作
+          </label>
+          <label>
+          <input type="radio" name="option" value="2"/>
+          趴在地上滑手機找現成的
+          </label>
+          <div class="error">請擇一</div>
+        </div>
+          <h2 class="question">怎麼知道這個活動的？</h2>
+          <div class="check__how required hide-error">
+            <input type="text" name = "how" placeholder="您的回答"/>
+          <div class="error">請輸入資料</div>
+          </div>
+      </div>
+      <div class="wrapper">
+        <div class="other">
+          <h4>其他</h4>
+          <p>
+          對活動的一些建議
+          </p>
+          <input type="text" placeholder="您的回答"/>
+        </div>
+      <input type="submit" class="submit"/>
+    </form>
+      <p class="note">請勿透過表單送出您的密碼。</p>
+      </div>
+    </div>
+  <footer class="mark">
+    © 2020 © Copyright. All rights Reserved.
+  </footer>
+  <script>
+    document.querySelector('.form__data')
+    .addEventListener('submit', (e) => {
+      let hasError = false;
+      let values = {};
+      const inputs = document.querySelectorAll('.required input[type=text]')
+      for (let input of inputs) {
+        if (!input.value) {
+          hasError = true;
+          input.parentNode.classList.remove('hide-error')
+          e.preventDefault()
+        } else {
+          values[input.name] = input.value;
+          input.parentNode.classList.add('hide-error')
+        }
+      }
+      const elements = document.querySelectorAll('.required')
+      for (let element of elements) {
+        const radio = element.querySelectorAll('input[type=radio]')
+        if(!radio.length) {
+          continue
+        }
+        if(![...radio].some(radio => radio.checked)) {
+          hasError = true;
+          element.classList.remove('hide-error')
+          e.preventDefault()
+        } else {
+          element.classList.add('hide-error')
+          let r = element.querySelector('input[type=radio]:checked')
+          values[r.name] = r.value;
+          }
+        }
+        if(!hasError) {
+          alert('送出 完成!' + JSON.stringify(values))
+        }
+      }
+    )
+  </script>
+</body>
+</html>

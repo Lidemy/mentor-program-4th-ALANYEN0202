@@ -1,0 +1,111 @@
+body {
+ background-color: rgba(0, 0, 0, 0.3);
+}
+.all{
+max-width: 645px;
+background: white;
+margin: 10% auto;
+box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+border-top: solid 8px #fad312;
+padding-bottom: 32px;
+}
+
+
+.wrapper {
+  margin: 50px;
+}
+
+.header__title {
+  font-family: MicrosoftJhengHei;
+  font-size: 32px;
+}
+
+.header__info {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.header__note {
+  font-size: 16px;
+  color: #e74149;
+  margin-top: 16px;
+}
+
+.form__data .email, .form__data .phone {
+  margin-top: 40px;
+}
+
+.form__data h2 {
+  font-size: 20px;
+}
+
+.form__data h2::after {
+  content: "*";
+  color: #e74149;
+  margin-left: 5px;
+  }
+
+.form__data div {
+  margin-top: 20px;
+}
+
+.question {
+  margin-top: 50px;
+}
+
+.other h4 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.form__data div {
+  margin-top: 0px;
+}
+
+.form__data div label, .note {
+  font-size: 14px;
+}
+
+.other p {
+  font-size: 14px;
+  margin-bottom: 29px;
+}
+
+.check__box label {
+  display: block;
+  margin-top: 10px;
+}
+
+.submit {
+  padding: 13px 31px;
+  border-radius: 3px;
+  background-color: #fad312;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 55px;
+  border: 0;
+}
+
+.mark {
+  background-color: #000000;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  color: #999999;
+  padding: 26px 0px;
+  font-size: 13px;
+}
+
+.error {
+  position: absolute;
+  color: red;
+}
+
+.error::before {
+  content: "*";
+  color: #e74149;
+}
+
+.hide-error .error {
+  visibility: hidden;
+}
+
