@@ -1,0 +1,52 @@
+body {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.wrapper {
+  max-width: 760px;
+  background-color:#fffed2;
+  margin :auto
+}
+
+.title {
+  color: #288e5e;
+  text-align: center;
+  font-size: 36px;
+}
+
+.add-list input[type=text] {
+  background-color:#fffed2;
+  width: 99%;
+  border:none;
+  border-bottom: solid 1px #288e5e ;
+}
+
+.check__list {
+  display: flex;
+  padding: 10px;
+  color: #288e5e;
+  font-size: 20px;
+  justify-content: space-between;
+}
+.delete {
+  color:black;
+  cursor: pointer;
+}
+
+.check__list p {
+  margin: 0px;
+  padding-left: 10px;
+}
+
+.check__list input[type=checkbox] {
+  margin-top: 7px;
+  cursor: pointer;
+}
+
+.complete .add-text {
+  text-decoration: line-through;
+}
+
+.add-text {
+  display: inline-block;
+}

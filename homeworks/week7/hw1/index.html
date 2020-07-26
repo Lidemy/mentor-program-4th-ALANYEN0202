@@ -73,43 +73,6 @@
   <footer class="mark">
     © 2020 © Copyright. All rights Reserved.
   </footer>
-  <script>
-    document.querySelector('.form__data')
-    .addEventListener('submit', (e) => {
-      let hasError = false;
-      let values = {};
-      const inputs = document.querySelectorAll('.required input[type=text]')
-      for (let input of inputs) {
-        if (!input.value) {
-          hasError = true;
-          input.parentNode.classList.remove('hide-error')
-          e.preventDefault()
-        } else {
-          values[input.name] = input.value;
-          input.parentNode.classList.add('hide-error')
-        }
-      }
-      const elements = document.querySelectorAll('.required')
-      for (let element of elements) {
-        const radio = element.querySelectorAll('input[type=radio]')
-        if(!radio.length) {
-          continue
-        }
-        if(![...radio].some(radio => radio.checked)) {
-          hasError = true;
-          element.classList.remove('hide-error')
-          e.preventDefault()
-        } else {
-          element.classList.add('hide-error')
-          let r = element.querySelector('input[type=radio]:checked')
-          values[r.name] = r.value;
-          }
-        }
-        if(!hasError) {
-          alert('送出 完成!' + JSON.stringify(values))
-        }
-      }
-    )
-  </script>
+  <script src="hw1.js"></script>
 </body>
 </html>
