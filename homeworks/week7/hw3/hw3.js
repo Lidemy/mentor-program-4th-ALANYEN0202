@@ -25,7 +25,7 @@ document
         <span class="delete">X</span>
       `;
         document.querySelector('.new__list').appendChild(div);
-        inputValues.value = '';
+        document.querySelector('input[type=text]').value = '';
       }
     }
   });
@@ -34,7 +34,7 @@ document
   .querySelector('.new__list')
   .addEventListener('click', (e) => {
     if (e.target.classList.contains('delete')) {
-      document.querySelector('.new__list').removeChild(e.target.parentNode);
+      e.target.parentNode.remove();
       return;
     }
     if (e.target.classList.contains('todo__check')) {
