@@ -1,0 +1,126 @@
+  .navbar {
+    box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  }
+  
+  .navbar .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 84px;
+    background: white;
+    padding: 0px 15px;
+  }
+  
+  .navbar__site-name{
+    color: #489846;
+    font-family: Questrial;
+    font-size: 36px;
+  }
+  
+  .navbar__list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+  }
+
+  li {
+    cursor: pointer;
+    padding: 8px 15px;
+  }
+  
+  li + li {
+    margin-left: 20px;
+  }
+
+  .navbar__list li:hover {
+    background-color: #ff7286;
+  }
+
+  .navbar__list li a {
+    text-decoration: none;
+    color: black;
+    padding: 8px 16px;
+    display: block;
+  }
+
+  .contain {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 40px 120px;
+  }
+
+  h3 {
+    margin: 0px;
+  }
+
+  .live__corner {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .live__bro {
+    width: 32%;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .live__bro:hover {
+    transform: scale(1.07);
+    filter: brightness(1.2);
+
+  }
+
+  .live__bro img {
+    width: 100%;
+  }
+
+  .live__footer img {
+    width:65px;
+    height: 65px;
+    border-radius: 50%;
+  }
+
+  .live__footer {
+    display: flex;
+    height: 100px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .live__logo {
+    margin: 5px;
+  }
+
+  .game__des {
+    margin: 7px;
+  }
+
+  .game__player {
+    margin: 5px;
+  }
+
+  @media(max-width: 760px) {
+
+    .contain {
+      padding: 0px;
+      width: 100%;
+    }
+
+    .live__bro {
+      width: 100%;
+      margin: 5px 0px;
+    }
+
+    .navbar__site-name {
+      font-size: 17px;
+    }
+
+    .navbar .wrapper {
+      padding: 0px;
+      flex-direction: column;
+      font-size: 12px;
+    }
+  }
