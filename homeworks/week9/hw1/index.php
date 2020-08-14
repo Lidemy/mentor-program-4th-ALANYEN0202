@@ -2,7 +2,7 @@
   session_start();
   require_once('conn.php');
 
-  $result = $conn->query("SELECT * FROM comments ORDER BY id DESC");
+  $result = $conn->query("SELECT * FROM ALAN_comments ORDER BY id DESC");
   if(empty($result)) {
     die($conn->error);
   }

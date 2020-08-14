@@ -10,7 +10,7 @@ if (empty($_POST['password']) || empty($_POST['username']) ) {
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = sprintf("SELECT * FROM users WHERE username='%s' AND password='%s'"
+$sql = sprintf("SELECT * FROM ALAN_users WHERE username='%s' AND password='%s'"
 ,$username, $password);
 
 $result = $conn->query($sql);

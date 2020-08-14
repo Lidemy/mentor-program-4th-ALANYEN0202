@@ -10,8 +10,8 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $nickname = $_POST['nickname'];
 
-$sql = sprintf("INSERT INTO users(username, password, nickname) values('%s', '%s', '%s')"
-,$username, $password, $nickname, );
+$sql = sprintf("INSERT INTO ALAN_users(username, password, nickname) values('%s', '%s', '%s')"
+,$username, $password, $nickname);
 
 $result = $conn->query($sql);
 

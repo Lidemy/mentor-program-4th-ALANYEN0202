@@ -12,7 +12,7 @@ $content = $_POST['content'];
 $user = getUsersFromUsername($_SESSION['username']);
 $nickname=$user['nickname'];
 
-$sql = sprintf("INSERT INTO comments(nickname, content) values('%s', '%s')",$nickname, $content);
+$sql = sprintf("INSERT INTO ALAN_comments(nickname, content) values('%s', '%s')",$nickname, $content);
 
 $result = $conn->query($sql);
 
