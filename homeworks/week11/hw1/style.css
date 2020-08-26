@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+ }
+
+body {
+  margin: 0px;
+  background-color: #f7f7f7;
+}
+
+.warning {
+  background-color: #ffc4c6;
+  color: #a20606;
+  padding: 10px;
+  text-align: center;
+}
+
+.wrapper {
+    max-width: 700px;
+    width: 100%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+}
+
+.comments__nickname {
+    margin-bottom: 10px;
+}
+
+.nickname__input, .username__input, .password__input, .new_nickname__btn {
+    border: 1px solid #c2dffb ;
+    padding: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c2dffb;
+}
+
+.comment__submit-btn {
+    border: 1px solid #c2dffb;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 8px;
+    color: #583c63;
+    font-size: 16px;
+}
+
+.comment__hr {
+    margin: 20px auto;
+    height: 2px;
+    max-width: 95%;
+    background-color: #e8e8e8;
+}
+
+.card {
+    margin: 20px 0px;
+    min-height: 70px;
+    display: flex;
+    word-break: break-all;
+}
+
+.card__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    min-width: 50px;
+    background-color: #e4f0fb;
+}
+
+.card__body {
+    margin-left: 10px;
+}
+
+.card__author {
+    color: #5c9edc;
+    font-weight: bold;
+}
+
+.card__time {
+    color: #a0a0a0;
+}
+
+.card__text {
+    white-space: pre-line;
+}
+
+.error {
+    color: red;
+}
+
+.res__btn {
+    border: 1px solid #bdc7d1;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 8px;
+    color: #583c63;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.update__btn {
+  cursor: pointer;
+}
+
+.update__nickname {
+  margin-top: 15px;
+}
+
+.hide {
+  display: none;
+}
+
+.page__wrapper {
+  text-align: center;
+}
+
+.page__btn {
+  margin-top: 15px;
+}
+
+.page__btn a {
+  text-decoration: none;
+  padding: 5px;
+  border : 1px solid #5c9edc;
+  color: #2e445a;
+  border-radius: 8px;
+  font-weight:bold;
+}
+
+table {
+  border: 3px solid #FFAC55;
+  text-align: center;
+}
+
+.admin-btn {
+  text-decoration: none;
+  color: #20578b ;
+}
