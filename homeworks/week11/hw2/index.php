@@ -79,9 +79,9 @@ $result = $stmt->get_result();
         <img src="./picture/watch-later-24-px.png"/><span><?php echo escape($row['created_at'])?></span><span><img src="./picture/folder-24-px.png"/></span><span>歷史公告</span>
         </div>
         <div class="para">
-         <?php echo mb_substr($row['content'], 0, 200, "utf-8")?>
+        <?php echo mb_substr($row['content'], 0, 500)?>
         </div>
-        <a  class="read__more-btn"href = "post.php?id=<?php echo escape($row['id'])?>">READ MODE</a>
+          <a class="read__more-btn"href = "post.php?id=<?php echo escape($row['id'])?>">READ MODE</a>
       </div>
       <?php } ?>
       <?php 
