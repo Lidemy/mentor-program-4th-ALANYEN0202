@@ -77,7 +77,9 @@
     </div>
   </footer>
   <script>
-  CKEDITOR.replace("ckeditor");
+   CKEDITOR.replace("ckeditor", {
+    removePlugins:"sourcearea"
+  });
   </script>
 </body>
 </html>
