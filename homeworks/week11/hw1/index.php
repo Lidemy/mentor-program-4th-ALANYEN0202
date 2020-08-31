@@ -123,7 +123,7 @@ $result = $stmt->get_result();
         <?php }?>
   </section>
   <?php 
-    $sql = "SELECT count(id) as count FROM comments WHERE is_deleted IS NULL";
+    $sql = "SELECT count(id) as count FROM ALAN_comments WHERE is_deleted IS NULL";
     $stmt = $conn->prepare($sql);
     $result = $stmt->execute();
     $result = $stmt->get_result();
