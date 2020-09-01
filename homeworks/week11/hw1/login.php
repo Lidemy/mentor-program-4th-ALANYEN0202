@@ -31,13 +31,13 @@
         ?>
       </div>
       <form class="comments__new-form" method="POST" action="handle_login.php">
-      <div class="comments__nickname" name="nickname">
-          帳號 : <input class="username__input" name = "username"/>
-      </div>
-      <div class="comments__nickname" name="nickname">
-          密碼 : <input type= "password" class="password__input" name = "password"/>
-      </div>
-      <input class="comment__submit-btn" type="submit">
+        <div class="comments__nickname" name="nickname">
+            帳號 : <input class="username__input" name = "username"/>
+        </div>
+        <div class="comments__nickname" name="nickname">
+            密碼 : <input type= "password" class="password__input" name = "password"/>
+        </div>
+        <input class="comment__submit-btn" type="submit">
       </form>
       <div class="comment__hr"></div>
     </div>

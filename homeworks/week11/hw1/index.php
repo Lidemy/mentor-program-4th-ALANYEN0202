@@ -58,7 +58,9 @@ $result = $stmt->get_result();
         <?php } else { ?>
           <a class="res__btn" href="logout.php">登出</a>
           <span class="update__btn res__btn">修改暱稱</span>
+          <?php if ($role['role'] === 'admin') { ?>
           <a class="res__btn" href="admin.php">管理後台</a>
+          <?php }?>
           <form class="hide update__nickname comments__new-form" method="POST" action="handle_update_nickname.php">
             新暱稱 : <input type="text" class="new_nickname__btn" name="nickname"/>
             <input class="comment__submit-btn" type="submit"> 
@@ -79,12 +81,12 @@ $result = $stmt->get_result();
       </div>
       <?php
         if($role) {
-          if ($role['role'] !== 0 ) { ?>
+          if ($role['role'] !== 'banned' ) { ?>
         <form class="comments__new-form" method="POST" action="handle_add_post.php">
         <textarea class="comments__text" rows="5" name="content"></textarea>
         <input class="comment__submit-btn" type="submit">
         </form>
-      <?php } else if ($role['role'] === 0) { ?> 
+      <?php } else if ($role['role'] === 'banned') { ?> 
         <h3>你已被停權</h3>
       <?php } else { ?>
         <h3>請登入</h3>
@@ -107,7 +109,7 @@ $result = $stmt->get_result();
             <?php echo escape($row['create_at']) ?>
             <?php 
               if($role) {
-                if ($role['role'] === 2 ) { 
+                if ($role['role'] === 'admin' ) { 
             ?>
               <a href="update_comment.php?id=<?php echo escape($row['id'])?>">編輯</a>
               <a href="handle_deleted_comment.php?id=<?php echo escape($row['id'])?>">刪除</a>

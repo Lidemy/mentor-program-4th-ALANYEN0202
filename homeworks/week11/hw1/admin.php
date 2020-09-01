@@ -45,24 +45,25 @@ $result = $stmt->get_result();
         <?php
           $rows = getRoleFromUsername($username);
         ?>
-        <?php if ($rows['role'] === 2 ) { ?>
+        <?php if ($rows['role'] === 'admin' ) { ?>
        <table rules="all" cellpadding='5'>
          <tr>
            <td>帳號</td>
            <td>綽號</td>
            <td>創建時間</td>
            <td>身份</td>
-           <td>更改身份</td>
-           <td>更改身份</td>
+           <td>管理員</td>
+           <td>一般使用者</td>
+           <td>停權者</td>
          </tr>
          <?php while($row=$result->fetch_assoc()) { 
            $role = null;
            $id = $row['id'];
-           if($row['role'] === 0) {
+           if($row['role'] === 'banned') {
              $role = '停權使用者';
-           } else if ($row['role'] === 1) {
+           } else if ($row['role'] === 'normal') {
              $role = '一般使用者';
-           } else if($row['role'] === 2){
+           } else if($row['role'] === 'admin'){
              $role = '管理員';
            }
            if ($row['username'] !== $username ) {
@@ -72,16 +73,9 @@ $result = $stmt->get_result();
            <td><?php echo escape($row['nickname']) ?></td>
            <td><?php echo escape($row['create_at']) ?></td>
            <td><?php echo escape($role) ?></td>
-           <?php if($row['role'] == 0) { ?>
-             <td><a class="admin-btn" href="handle_update_admin.php?id=<?php echo escape($id)?>&role=1">一般使用者</a></td>
-             <td><a class="admin-btn" href="handle_update_admin.php?id=<?php echo escape($id)?>&role=2">管理員</a></td>
-           <?php } else if($row['role'] == 1) { ?>
-             <td><a class="admin-btn" href="handle_update_admin.php?id=<?php echo escape($id)?>&role=0">停權使用者</a></td>
-             <td><a class="admin-btn" href="handle_update_admin.php?id=<?php echo escape($id)?>&role=2">管理員</a></td>
-           <?php } else if($row['role'] == 2) { ?>
-             <td><a class="admin-btn" href="handle_update_admin.php?id=<?php echo escape($id)?>&role=0">停權使用者</a></td>
-             <td><a class="admin-btn" href="handle_update_admin.php?id=<?php echo escape($id)?>&role=1">一般使用者</a></td>
-           <?php }?>
+           <td><a class="admin-btn" href="handle_update_admin.php?id=<?php echo escape($id)?>&role=admin">管理員</a></td>
+           <td><a class="admin-btn" href="handle_update_admin.php?id=<?php echo escape($id)?>&role=normal">一般使用者</a></td>
+           <td><a class="admin-btn" href="handle_update_admin.php?id=<?php echo escape($id)?>&role=banned">停權使用者</a></td>
          </tr>
          <?php }} ?>
            <?php } else { 

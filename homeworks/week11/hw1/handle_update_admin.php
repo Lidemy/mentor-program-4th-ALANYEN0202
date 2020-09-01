@@ -10,7 +10,7 @@ $username = $_SESSION['username'];
 
 $sql ="UPDATE ALAN_users SET role = ? WHERE id = ? ";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('ii', $role, $id);
+$stmt->bind_param('si', $role, $id);
 $result = $stmt->execute();
 
 
