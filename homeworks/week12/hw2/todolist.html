@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="./todolist.js"></script>
+<style>
+  .completed .todo-text{
+    text-decoration-line: line-through;
+  }
+  .todo-list {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="alert alert-warning mt-3 text-center" role="alert">
+        To do list!
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <form class="form">
+          <div class="form-group mx-sm-3 mb-2">
+            <input  name="content" type="text" class="form-control" id="todolist-input" placeholder="What need to be done ?">
+          </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <button  type="submit" class="btn btn-primary mb-2 btn-block">送出</button>
+        </form>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+            代辦事項
+        </div>
+        <ul class="todos list-group list-group-flush">
+    
+        </ul> 
+        <div class="card-footer d-flex justify-content-between">
+          <div>
+            <button type="button" class="show-all btn btn-primary">全部</button>
+            <button type="button" class="all-done btn btn-success">已完成</button>
+            <button type="button" class="not-done btn btn-warning">未完成</button>
+          </div>
+          <div>
+            <button type="button" class="clean-done btn btn-info">清空已完成</button>
+            <button type="button" class="clean-all btn btn-danger">全部清空</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
