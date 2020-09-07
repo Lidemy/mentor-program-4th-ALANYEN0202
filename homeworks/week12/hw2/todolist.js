@@ -105,7 +105,7 @@ $(document).ready(() => {
        your _listId is ${listId}
        要讀檔時請在網址後面加參數唷~ 例如你是 ?listId=${listId}
        `);
-      $('input[name=listId_input]').val('');
+      $('input[name=list_id_input]').val('');
     });
   });
 
