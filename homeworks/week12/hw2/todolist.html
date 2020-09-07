@@ -13,6 +13,9 @@
     display: flex;
     justify-content: space-between;
   }
+  .hide {
+    display: none;
+  }
 </style>
 </head>
 <body>
@@ -52,6 +55,9 @@
             <button type="button" class="not-done btn btn-warning">未完成</button>
           </div>
           <div>
+            <input name="list_id_input" type="text" class="list_id-input" placeholder="your list_id ?">
+            <button type="button" class="store btn btn-dark">儲存</button>
+            <button type="button" class="hide change btn btn-dark ">儲存變更</button>
             <button type="button" class="clean-done btn btn-info">清空已完成</button>
             <button type="button" class="clean-all btn btn-danger">全部清空</button>
           </div>
