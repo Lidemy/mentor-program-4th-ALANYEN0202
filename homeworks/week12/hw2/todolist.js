@@ -90,7 +90,7 @@ $(document).ready(() => {
     const jsonStr = JSON.stringify(liHTML);
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/todolist/api_add_todolist.php',
+      url: 'http://mentor-program.co/mtr04group2/ALAN/week12/hw2/api_add_todolist.php',
       data: {
         list_id: listId,
         json_str: jsonStr,
@@ -121,7 +121,7 @@ $(document).ready(() => {
     listIdStr = url.split('?')[1];
     id = listIdStr.split('=')[1];
     $.ajax({
-      url: `http://localhost/todolist/api_todolist.php?list_id=${id}`,
+      url: `http://mentor-program.co/mtr04group2/ALAN/week12/hw2/api_todolist.php?list_id=${id}`,
     }).done((data) => {
       if (!data.ok) {
         alert(data.message);
@@ -142,7 +142,7 @@ $(document).ready(() => {
       const jsonStr = JSON.stringify(liHTML);
       $.ajax({
         type: 'POST',
-        url: 'http://localhost/todolist/api_update_todolist.php',
+        url: 'http://mentor-program.co/mtr04group2/ALAN/week12/hw2/api_update_todolist.php',
         data: {
           list_id: id,
           json_str: jsonStr,
