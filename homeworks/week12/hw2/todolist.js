@@ -92,7 +92,7 @@ $(document).ready(() => {
       type: 'POST',
       url: 'http://localhost/todolist/api_add_todolist.php',
       data: {
-        listId,
+        list_id: listId,
         json_str: jsonStr,
       },
     }).done((data) => {
