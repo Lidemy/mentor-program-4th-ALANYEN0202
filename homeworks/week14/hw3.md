@@ -92,3 +92,10 @@ durability ( 持久性 )： 成功後，寫入資料不會不見。
 持久性 D: 比較好理解，就是資料需永久保存，不能突然消失之類的。
 
 
+參考資料：
+
+[程式導師實驗計畫：Lesson 8-2 之資料庫](https://www.youtube.com/watch?v=iDG8Ha2uZPs)
+
+
+[程式導師實驗計畫第二期：Week8-1 後端基礎（下）](https://www.youtube.com/watch?v=QiCm9JE43KM)
+
