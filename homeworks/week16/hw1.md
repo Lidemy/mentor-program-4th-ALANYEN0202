@@ -26,7 +26,7 @@ setTimeout(() => {
   console.log(2)
 }, 0)
 ```
-將`setTimeout()`這個瀏覽器或是 Node js 提供的方法放到 執行環境 ( web 或 node js ) 裡計時，由於是 0 秒，所以很快就執行完畢，並且把結果 `console.log(2)`傳到 task queue 等待 event loop 發放，由於此時堆疊還沒清空，因此還在等待。
+在 stack 上執行 `setTimeout()`然後瀏覽器或是 Node js 幫忙計時，由於是 0 秒，所以很快就執行完畢，並且把程式 `console.log(2)`傳到 task queue 等待 event loop 發放，由於此時堆疊還沒清空，因此還在等待。
 
 三、 ```console.log(3)``` 堆疊上放入這段程式碼並解輸出 3
 
@@ -36,7 +36,7 @@ setTimeout(() => {
   console.log(4)
 }, 0)
 ```
-同步驟二，此時 task quequ 上有結果 `console.log(2)、console.log(4)`並等待放上堆疊。
+同步驟二，此時 task quequ 上有程式 `console.log(2)、console.log(4)`並等待放上堆疊。
 
 五、```console.log(5)``` 疊上放入這段程式碼並解輸出 5
 
