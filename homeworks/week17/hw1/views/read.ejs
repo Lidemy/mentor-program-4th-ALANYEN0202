@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Who'sBlog</title>
+  <style>
+    <%- include('./style.css') %>
+  </style>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <%- include('./template/navbar') %>
+  <div class="banner">
+    <div class="banner__title">
+      <div class="banner__text">存放技術之地</div>
+      <p class="banner__intr">Welcome to my blog</p>
+    </div>
+  </div>
+  <main class="main__article">
+    <div class="wrapper">
+      <div class="article">
+        <div class="article__info">
+          <div class="article__title">
+            <%= comment.title %>
+            <div class="para">
+              <%= comment.content%>
+            </div>
+          </div>
+          <div>
+          <% if(username === comment.User.username) { %>
+            <a href="update_comment/<%= comment.id %>">編輯</a>
+            <a href="deleted_comment/<%= comment.id %>">刪除</a>
+          <% } %>
+          </div>
+        </div>
+      </div>
+      </div>
+  <div class="comment__hr"></div>
+  </main>
+  <footer class="footer">
+    <div class="footer__ltd">
+      Copyright © 2020 Who's Blog All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>
