@@ -1,4 +1,4 @@
-/* eslint-disable arrow-parens,  arrow-body-style */
+/* eslint-disable arrow-parens,  arrow-body-style, consistent-return */
 const db = require('../models');
 
 const { Lottery } = db;
@@ -38,12 +38,12 @@ const lotteryController = {
     res.render('index');
   }),
 
-  add: ((req, res) => {
+  add: ((req, res, next) => {
     const { username } = req.session;
     const { prizename, imgurl, chances } = req.body;
     if (!prizename || !imgurl || !chances || !username) {
       req.flash('errorMessage', '欄位不得為空');
-      res.redirect('back');
+      return next();
     }
     Lottery.create({
       prizename,
@@ -54,7 +54,7 @@ const lotteryController = {
       res.redirect('back');
     }).catch(err => {
       req.flash('errorMessage', err.toString());
-      res.redirect('back');
+      return next();
     });
   }),
 
@@ -83,11 +83,11 @@ const lotteryController = {
     });
   }),
 
-  handelupdate: ((req, res) => {
+  handelupdate: ((req, res, next) => {
     const { prizename, imgurl, chances } = req.body;
     if (!prizename || !imgurl || !chances) {
       req.flash('errorMessage', '欄位不得為空');
-      res.redirect('back');
+      return next();
     }
     Lottery.findOne({
       where: {
@@ -103,11 +103,11 @@ const lotteryController = {
     }).then(() => {
       res.redirect('/lottery/admin');
     }).catch(() => {
-      res.redirect('/lottery/admin');
+      return res.redirect('/lottery/admin');
     });
   }),
 
-  delete: ((req, res) => {
+  delete: ((req, res, next) => {
     Lottery.findOne({
       where: {
         id: req.params.id,
@@ -118,7 +118,7 @@ const lotteryController = {
     }).then(() => {
       res.redirect('back');
     }).catch(() => {
-      res.redirect('back');
+      return next();
     });
   }),
 

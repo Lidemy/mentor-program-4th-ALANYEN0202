@@ -1,4 +1,4 @@
-/* eslint-disable arrow-parens,  arrow-body-style */
+/* eslint-disable arrow-parens,  arrow-body-style, consistent-return */
 const db = require('../models');
 
 const { Question } = db;
@@ -21,12 +21,12 @@ const questionsController = {
     });
   }),
 
-  add: ((req, res) => {
+  add: ((req, res, next) => {
     const { title, content } = req.body;
     const { username } = req.session;
     if (!title || !content || !username) {
       req.flash('errorMessage', '欄位不得為空');
-      res.redirect('back');
+      return next();
     }
     Question.create({
       title,
@@ -36,7 +36,7 @@ const questionsController = {
       res.redirect('back');
     }).catch(err => {
       req.flash('errorMessage', err.toString());
-      res.redirect('back');
+      return next();
     });
   }),
 
@@ -52,11 +52,11 @@ const questionsController = {
     });
   }),
 
-  handelupdate: ((req, res) => {
+  handelupdate: ((req, res, next) => {
     const { title, content } = req.body;
     if (!title || !content) {
       req.flash('errorMessage', '欄位不得為空');
-      res.redirect('back');
+      return next();
     }
     Question.findOne({
       where: {
@@ -71,11 +71,11 @@ const questionsController = {
     }).then(() => {
       res.redirect('/questions/admin');
     }).catch(() => {
-      res.redirect('/questions/admin');
+      return res.redirect('/questions/admin');
     });
   }),
 
-  delete: ((req, res) => {
+  delete: ((req, res, next) => {
     Question.findOne({
       where: {
         id: req.params.id,
@@ -86,7 +86,7 @@ const questionsController = {
     }).then(() => {
       res.redirect('back');
     }).catch(() => {
-      res.redirect('back');
+      return next();
     });
   }),
 

@@ -1,4 +1,4 @@
-/* eslint-disable arrow-parens,  arrow-body-style */
+/* eslint-disable arrow-parens,  arrow-body-style, consistent-return */
 const db = require('../models');
 
 const { Products } = db;
@@ -29,12 +29,12 @@ const productsController = {
     });
   }),
 
-  handelmenuadd: ((req, res) => {
+  handelmenuadd: ((req, res, next) => {
     const { username } = req.session;
     const { productsname, imgurl, prices } = req.body;
     if (!productsname || !imgurl || !prices || !username) {
       req.flash('errorMessage', '欄位不得為空');
-      res.redirect('back');
+      return next();
     }
     Products.create({
       productsname,
@@ -45,7 +45,7 @@ const productsController = {
       res.redirect('back');
     }).catch(() => {
       req.flash('errorMessage', '價格只能填數字');
-      res.redirect('back');
+      return next();
     });
   }),
 
@@ -62,11 +62,11 @@ const productsController = {
     });
   }),
 
-  handelupdate: ((req, res) => {
+  handelupdate: ((req, res, next) => {
     const { productsname, imgurl, prices } = req.body;
     if (!productsname || !imgurl || !prices) {
       req.flash('errorMessage', '欄位不得為空');
-      res.redirect('back');
+      return next();
     }
     Products.findOne({
       where: {
@@ -82,11 +82,11 @@ const productsController = {
     }).then(() => {
       res.redirect('/menu/admin');
     }).catch(() => {
-      res.redirect('/menu/admin');
+      return res.redirect('/menu/admin');
     });
   }),
 
-  delete: ((req, res) => {
+  delete: ((req, res, next) => {
     Products.findOne({
       where: {
         id: req.params.id,
@@ -97,7 +97,7 @@ const productsController = {
     }).then(() => {
       res.redirect('back');
     }).catch(() => {
-      res.redirect('back');
+      return next();
     });
   }),
 
