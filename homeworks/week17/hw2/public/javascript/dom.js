@@ -24,8 +24,6 @@ function lotto(className, str, imgUrl) {
 function getPrize(id) {
   return fetch(`${url}/${id}`).then((response) => {
     return response.json();
-  }).then((json) => {
-    return json;
   }).catch((err) => {
     return err;
   });
@@ -34,9 +32,7 @@ function getPrize(id) {
 document
   .querySelector('.button__name')
   .addEventListener('click', () => {
-    getPrize(prizeId).then((json) => {
-      return json;
-    }).then((object) => {
+    getPrize(prizeId).then((object) => {
       return object.prizeCollection;
     }).then((prize) => {
       if (prize.prizename === '東京機票') {

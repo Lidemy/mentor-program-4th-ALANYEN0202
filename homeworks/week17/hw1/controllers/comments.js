@@ -1,8 +1,7 @@
 /* eslint-disable no-undef,  arrow-body-style */
 const db = require('../models');
 
-const { Comment } = db;
-const { User } = db;
+const { Comment, User } = db;
 
 
 const commentController = {

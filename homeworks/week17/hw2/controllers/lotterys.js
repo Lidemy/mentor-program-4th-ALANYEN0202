@@ -38,7 +38,7 @@ const lotteryController = {
     const { prizename, imgurl, chances } = req.body;
     if (!prizename || !imgurl || !chances || !username) {
       req.flash('errorMessage', '欄位不得為空');
-      res.redirect('back');
+      return res.redirect('back');
     }
     Lottery.create({
       prizename,
