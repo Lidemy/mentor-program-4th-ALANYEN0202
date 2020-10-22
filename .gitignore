@@ -1,5 +1,5 @@
 node_modules/
 conn.php
 .DS_STORE
-iyarn.lock
+yarn.lock
 config/
