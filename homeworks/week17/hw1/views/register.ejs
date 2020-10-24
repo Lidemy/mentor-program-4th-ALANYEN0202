@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <style>
+    <%- include('./style.css') %>
+  </style> 
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Who'sBlog</title> 
+  
+</head>
+<body>
+ <%- include('./template/navbar') %>
+ <div class="login__wrapper">
+   <h2>Log In</h2>
+   <% if(errorMessage && errorMessage.length > 0) { %>
+      <div class="error">
+        <%= errorMessage %>
+      </div>
+   <% } %>
+   <form class="login__form" method="POST" action="register">
+     <div>USERNAME</div>
+     <input class="username__input" name="username">
+     <div>NICKNAME</div>
+     <input class="nickname__input" name="nickname">
+     <div>PASSWORD</div>
+     <input class="password__input" type="password" name="password">
+     <div class="form__btn">
+       <input class="register-btn" type="submit" value="REGISTER">
+       <a class="back-btn" href="login">Back to login</a>
+     </div>
+  </form>
+</div>
+</body>
+</html>
