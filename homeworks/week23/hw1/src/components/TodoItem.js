@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 import { deleteTodo, toggleTodo } from '../redux/actions'
+import PropTypes from "prop-types";
 
 import styled from 'styled-components';
 
@@ -55,6 +56,9 @@ const DeleteButton = styled(ToggleButton)`
     }
 `
 
+TodoItem.propTypes = {
+  todo: PropTypes.object
+}
 export default function TodoItem({ todo }) {
   const dispatch = useDispatch()
   return (
